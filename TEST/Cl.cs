@@ -9,14 +9,16 @@ namespace TEST
   
     public class Cl
     { 
-        public double Divide(double a, double b)
+        public bool Divide(double a, double b)
         {
             if (b == 0)
             {
                 throw new DivideByZeroException("НЕЛЬЗЯ ДЕЛИТЬ НА 0");
             }
 
-            return a / b;
+            if (a % b == 0)
+                return true;
+            else return false;
         }
     }
     class Program
